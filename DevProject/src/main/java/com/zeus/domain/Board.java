@@ -1,0 +1,27 @@
+package com.zeus.domain;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.ToString;
+
+@Data
+@ToString(exclude = {"regDate","COUNT"})
+@Builder
+public class Board  {	
+	
+	//멤변수(계시판)
+	@NonNull
+	private int boardNo;        //pk
+	private String title;
+	private String content;
+	private String writer;
+	private Date regDate;
+	private int COUNT;
+	//생성자
+}

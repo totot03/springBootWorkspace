@@ -1,10 +1,15 @@
 package com.zeus.controller;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
+
 //뷰화면에서 사용자 요청을 받는 클래스
+@Log
 @Controller
 public class HomeController {
 	//http://192.168.0.107/home 요청을 하면 여기서 받는다.
@@ -13,6 +18,8 @@ public class HomeController {
 	@RequestMapping(value = "/home")
 	public String home() {
 		//비지니스 로직을 처리한다.(데이타베이스 부르고 => 연산하고 => 결과값 home.jsp 보내준다)
+		Date date = new Date();
+		log.info(String.format("접속시간: %s ", date.toString()));
 		return "home"; 
 	}
 	@RequestMapping(value = "/")
