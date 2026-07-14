@@ -1,7 +1,8 @@
-package com.hi.controller;
+package com.zeus.controller;
 
 import java.util.List;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,14 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.hi.dto.BoardDTO;
-import com.hi.service.BoardService;
-import com.hi.service.BoardServiceImpl;
+import com.zeus.dto.BoardDTO;
+import com.zeus.service.BoardService;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
+@MapperScan(basePackages = "com.zeus.mapper")
 public class BoardController {
 	//@Autowired
 	private BoardService boardService;
@@ -33,7 +34,7 @@ public class BoardController {
 	
 	// 게시판 입력창화면 요청
 	@GetMapping(value = "/board/insertForm")
-	public String boardInsertFrom(BoardDTO boardDTO, Model model) {
+	public String boardInsertForm(BoardDTO boardDTO, Model model) {
 
 		model.addAttribute("boardDTO", boardDTO);
 		return "/board/insertForm";
