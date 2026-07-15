@@ -15,4 +15,6 @@ public interface MemberMapper {
 	public int deleteAuth(Member member) throws Exception;
 	
 	public Member selectMember(Member member) throws Exception;
+	
+	
 }

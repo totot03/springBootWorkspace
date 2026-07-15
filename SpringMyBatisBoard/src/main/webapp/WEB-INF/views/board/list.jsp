@@ -24,6 +24,12 @@
 			<div>
 				<span class="title-text">${msg}</span>
 			</div>
+			<div>
+				<form method="POST" action="/board/search"> 
+					TITLE : <input type="text", name="title" />
+					<input type="submit" value="검색" />
+				</form>
+			</div>
 		</div>
 
 		<div class="notion-table-container">

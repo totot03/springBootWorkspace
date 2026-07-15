@@ -2,6 +2,7 @@ package com.zeus.service;
 
 import java.util.List;
 
+import com.zeus.domain.Board;
 import com.zeus.dto.BoardDTO;
 
 
@@ -21,4 +22,7 @@ public interface BoardService {
 	
 	//list
 	public List<BoardDTO> list() throws Exception;
+	
+	//search
+	public List<BoardDTO> search(BoardDTO boardDTO) throws Exception;
 }
