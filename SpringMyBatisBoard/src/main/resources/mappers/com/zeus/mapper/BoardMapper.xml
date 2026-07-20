@@ -20,6 +20,7 @@
 	</update>
 	<delete id="delete">
 		DELETE FROM mybatisboard WHERE board_no = #{boardNo}
+		<!-- DELETE FROM mybatisboard WHERE board_no2 = #{boardNo} -->
 	</delete>
 	
 	<select id="list" resultType="com.zeus.domain.Board">
